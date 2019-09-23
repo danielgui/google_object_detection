@@ -172,7 +172,7 @@ def upload():
   photo_form = PhotoForm(request.form)
   return render_template('upload.html', photo_form=photo_form, result={})
 '''
-@app.route("/", methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
     
