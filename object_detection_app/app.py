@@ -166,13 +166,16 @@ def detect_objects(image_path):
 
   return result
 
-
+'''
 @app.route('/')
 def upload():
   photo_form = PhotoForm(request.form)
   return render_template('upload.html', photo_form=photo_form, result={})
-
-
+'''
+@app.route("/", methods=['GET'])
+def index():
+    return render_template('index.html')
+    
 @app.route('/post', methods=['GET', 'POST'])
 def post():
   form = PhotoForm(CombinedMultiDict((request.files, request.form)))
